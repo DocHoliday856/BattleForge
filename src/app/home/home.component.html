@@ -1,0 +1,33 @@
+<div style="text-align:center">
+    <h1>
+      Welcome to {{ title }}!
+    </h1>
+    <img alt="Warhammer Logo" src="http://www.sourcecomicsandgames.com/wp-content/uploads/2018/04/warhammer-40k-logo.png">
+  </div>
+  <div class="container">
+    <form>
+      <div class="form-group">
+          <div class="input-group-prepend">
+            <input type="text" #searchFaction class="form-control" placeholder="Quicksearch (Orks, Boltgun, Fleet, etc...)" name="battleForge" ngModel>
+            <span class="input-group-text"
+            (click)="addBF (searchFaction.value) ">Add</span>
+          </div>
+      </div>
+    </form>
+
+    <!-- Remember to uncomment routers from component.ts-->
+    <button class="btn btn-primary" (click)="goToArmy()">Armies</button>
+    <button class="btn btn-primary" (click)="goToFaction()">Factions</button>
+    <button class="btn btn-primary" (click)="goToRules()">Rules</button>
+    
+    <div class="data">
+      <ul class="list-instyled">
+        <li *ngFor="let bf of battleForgeArray">{{bf}}</li>
+      </ul>
+    </div>
+  </div>
+  
+  
+  
+  <router-outlet></router-outlet>
+  
