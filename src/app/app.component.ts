@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewContainerRef } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
+  isNavbarCollapsed = false;
+
   title = 'BattleForge';
+  battleForgeArray = [];
+
+  addBF(value) {
+    this.battleForgeArray.push(value)
+    console.log(value)
+  }
 }
