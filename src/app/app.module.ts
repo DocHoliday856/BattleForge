@@ -5,7 +5,6 @@ import {CommonModule} from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {FlexLayoutModule} from '@angular/flex-layout';
 
 
 // stuff from 3rd party
@@ -61,8 +60,6 @@ import { HomeComponent } from './home/home.component';
 import { ArmiesComponent } from './armies/armies.component';
 import { FactionsComponent } from './factions/factions.component';
 import { RulesComponent } from './rules/rules.component';
-import { TopNavComponent } from './top-nav/top-nav.component';
-import { NavService } from './nav.service';
 
 /**
  * NgModule that includes all Material modules that are required.
@@ -121,7 +118,6 @@ export class MaterialModule {}
     ArmiesComponent,
     FactionsComponent,
     RulesComponent,
-    TopNavComponent,
   ],
   imports: [
     BrowserModule,
@@ -129,13 +125,12 @@ export class MaterialModule {}
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    FlexLayoutModule,
     AppRoutingModule,
     NgbModule,
     ToastModule.forRoot(),
     MaterialModule
     ],
-  providers: [NavService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
