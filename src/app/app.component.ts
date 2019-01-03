@@ -1,5 +1,7 @@
-import { Component, ViewContainerRef } from '@angular/core';
+import { Component, ViewContainerRef, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { ToastsManager } from 'ng2-toastr';
+
+import {MediaMatcher} from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-root',
@@ -7,21 +9,36 @@ import { ToastsManager } from 'ng2-toastr';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  isNavbarCollapsed = false;
-
   title = 'BattleForge';
-  battleForgeArray = [];
 
-  addBF(value) {
-    this.battleForgeArray.push(value)
-    console.log(value)
-  }
+  mobileQuery: MediaQueryList;
 
-  constructor(
-    private toastsManager: ToastsManager,
-    vcr: ViewContainerRef,
-  ) {
+  fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
+
+  fillerContent = Array.from({length: 50}, () =>
+      `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+       labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+       laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+       voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`);
+
+  private _mobileQueryListener: () => void;
+
+  constructor(changeDetectorRef: ChangeDetectorRef, 
+              media: MediaMatcher,
+              private toastsManager: ToastsManager,
+              vcr: ViewContainerRef,) {
+    this.mobileQuery = media.matchMedia('(max-width: 600px)');
+    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+    this.mobileQuery.addListener(this._mobileQueryListener);
+
     // sets the root view to be used with notifications
     this.toastsManager.setRootViewContainerRef(vcr);
   }
+
+  
+
+ 
+
+ 
 }
