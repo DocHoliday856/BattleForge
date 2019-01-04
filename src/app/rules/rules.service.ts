@@ -13,7 +13,20 @@ export interface IRule {
 
 @Injectable()
 export class RulesService {
-  rules: IRule[] = [];
+  
+  rules: IRule[] = [
+      {
+        id: 1,
+        name: 'Rugged Construction',
+        description: 'If this model suffers a Crew Stunned, Crew Shaken or Immobilised result, roll a dice. On a roll of 4 or more, the vehicle ignores that result, but still loses a Hull Point as normal.',
+        reference: 'Genestealer Cult Codex pg. 83',
+        createdAt: new Date(),
+        updatedAt: null
+    },
+
+  ];
+  
+  
   constructor(
     private http: HttpClient,
   ) { }
