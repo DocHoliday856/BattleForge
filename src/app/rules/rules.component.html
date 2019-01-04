@@ -1,3 +1,20 @@
 <p>
   rules works!
 </p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"><strong>Rule</strong></div>
+    <div class="col-md-6"><strong>Description</strong></div>
+    <div class="col-md-3"><strong>reference</strong></div>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let rule of rules">
+      <div class="row" [style.cursor]="'pointer'" (click)="goToEdit(rule.id)">
+        <div class="col-md-3"><strong>{{ rule.name }}</strong></div>
+        <div class="col-md-6"><strong>{{ rule.description }}</strong></div>
+        <div class="col-md-3"><strong>{{ rule.reference }}</strong></div>
+      </div>
+    </li>
+  </ul>
+</div>

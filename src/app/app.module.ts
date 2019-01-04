@@ -59,7 +59,8 @@ import {
 import { HomeComponent } from './home/home.component';
 import { ArmiesComponent } from './armies/armies.component';
 import { FactionsComponent } from './factions/factions.component';
-import { RulesComponent } from './rules/rules.component';
+import { DetachmentsComponent } from './detachments/detachments.component';
+import { RulesModule } from './rules/rules.module';
 
 /**
  * NgModule that includes all Material modules that are required.
@@ -105,7 +106,8 @@ import { RulesComponent } from './rules/rules.component';
     MatToolbarModule,
     MatTooltipModule,
     MatNativeDateModule,
-  ]
+  ],
+  declarations: [DetachmentsComponent]
 })
 export class MaterialModule {}
 
@@ -117,7 +119,6 @@ export class MaterialModule {}
     HomeComponent,
     ArmiesComponent,
     FactionsComponent,
-    RulesComponent,
   ],
   imports: [
     BrowserModule,
@@ -128,7 +129,8 @@ export class MaterialModule {}
     AppRoutingModule,
     NgbModule,
     ToastModule.forRoot(),
-    MaterialModule
+    MaterialModule,
+    RulesModule
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -17,16 +17,5 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  /* goToArmy(): void {
-    this.router.navigate([army]);
-  }
-
-  goToFaction(): void {
-    this.router.navigate([faction]);
-    }
-
-  goToRules(): void {
-    this.router.navigate([rules]);
-    } */
-
+  
 }
