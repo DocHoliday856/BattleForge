@@ -1,0 +1,9 @@
+{
+    "dev": {
+    "username": "root",
+    "password": "LordVader@138!",
+    "database": "BattleForge",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
