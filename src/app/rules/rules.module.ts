@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 
-import { RulesComponent } from './rules.component';
+import { RulesListComponent } from './rules-list/rules-list.component';
 import { RulesService } from './rules.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RulesDetailComponent } from './rules-detail/rules-detail.component';
 
 @NgModule({
     declarations: [
-        RulesComponent,
+        RulesListComponent,
+        RulesDetailComponent,
     ],
     imports: [
         CommonModule,

@@ -4,7 +4,9 @@ import { HomeComponent } from './home/home.component';
 import { ArmiesComponent } from './armies/armies.component';
 import { DetachmentsComponent } from './detachments/detachments.component';
 import { FactionsComponent } from './factions/factions.component';
-import { RulesComponent } from './rules/rules.component';
+import { RulesListComponent } from './rules/rules-list/rules-list.component';
+import { RulesDetailComponent } from './rules/rules-detail/rules-detail.component';
+
 
 
 
@@ -23,7 +25,9 @@ const routes: Routes = [
   //{ path: 'faction', component: FactionListComponent },
   //{ path: 'faction/:factionId', component: FactionDetailComponent },
 
-  { path: 'rules', component: RulesComponent },
+  { path: 'rules', component: RulesListComponent },
+  { path: 'rules/:ruleId', component: RulesDetailComponent },
+
 ];
 
 @NgModule({
