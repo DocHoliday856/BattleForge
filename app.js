@@ -40,7 +40,7 @@ app.use(function (req, res, next) {
 });
 
 app.get('/rules', rules.getAll);
-//app.get('/rules/:ruleId', rules.get);
+app.get('/rules/:ruleId', rules.get);
 app.post('/rules', rules.create);
 app.put('/rules', rules.update);
 

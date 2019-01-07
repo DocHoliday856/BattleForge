@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { RulesService, IRule} from '../rules.service';
 
 
+
 @Component({
   selector: 'app-rules-list',
   templateUrl: './rules-list.component.html',
@@ -22,7 +23,16 @@ export class RulesListComponent implements OnInit {
     .subscribe(
       (rules) => {
         this.rules = rules;
-      });
+      })
+
+    //  this.rules.sort(function(a,b) {
+    //   var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase()
+    //   if (nameA < nameB) //sort string ascending
+    //       return -1 
+    //   if (nameA > nameB)
+    //       return 1
+    //   return 0 //default return value (no sorting)
+    //  })
   }
 
   goToAdd(): void {
