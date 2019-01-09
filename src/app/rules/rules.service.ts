@@ -47,4 +47,12 @@ export class RulesService {
       return this.http.post<IRule>(`http://localhost:3000/rules`, rule);
     }
   }
+
+  delete(rule: IRule): Observable<IRule> {
+    if (rule.id) {
+      return this.http.delete<IRule>(`http://localhost:3000/rules`);
+    } else {
+      return;
+    }
+  }
 }

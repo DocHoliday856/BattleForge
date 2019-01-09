@@ -56,6 +56,8 @@ const get = async (req, res) => {
     return res.json(rule);
   }
   module.exports.update = update;
+
+
   
   const create = async function (req, res) {
     res.setHeader('Content-Type', 'application/json');

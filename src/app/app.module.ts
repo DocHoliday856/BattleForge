@@ -59,7 +59,7 @@ import {
 
 import { HomeComponent } from './home/home.component';
 import { ArmiesComponent } from './armies/armies.component';
-import { FactionsComponent } from './factions/factions.component';
+import { FactionsListComponent } from './factions/factions-list/factions-list.component';
 import { DetachmentsComponent } from './detachments/detachments.component';
 import { RulesModule } from './rules/rules.module';
 
@@ -119,7 +119,7 @@ export class MaterialModule {}
     AppComponent,
     HomeComponent,
     ArmiesComponent,
-    FactionsComponent,
+    FactionsListComponent,
   ],
   imports: [
     BrowserModule,

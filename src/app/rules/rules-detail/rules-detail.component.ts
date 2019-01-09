@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IRule, RulesService } from '../rules.service';
 import { ToastsManager } from 'ng2-toastr';
- @Component({
+ 
+@Component({
     templateUrl: './rules-detail.component.html',
 })
+
 export class RulesDetailComponent implements OnInit {
      rule: IRule;
      constructor(
@@ -13,7 +15,8 @@ export class RulesDetailComponent implements OnInit {
         private rulesService: RulesService,
         private toastsManager: ToastsManager,
     ) { }
-     ngOnInit() {
+     
+    ngOnInit() {
         let id: string | number = this.route.snapshot.paramMap.get('ruleId');
         id = isNaN(parseInt(id)) ? 0 : parseInt(id);
         if (id > 0) {
@@ -34,12 +37,14 @@ export class RulesDetailComponent implements OnInit {
             };
         }
     }
-     getLocalDateTime(): string {
+     
+    getLocalDateTime(): string {
         const startTime = new Date();
         startTime.setHours(startTime.getHours() - (startTime.getTimezoneOffset() / 60));
         return startTime.toISOString().slice(0, 16);
     }
-     save(): void {
+     
+    save(): void {
         if (!this.formValid()) {
             this.toastsManager.error('Form invalid');
             return;
@@ -51,10 +56,25 @@ export class RulesDetailComponent implements OnInit {
                 this.router.navigate(['rules']);
             });
     }
-     private formValid(): boolean {
+
+    delete(): void {
+        if (!this.formValid()) {
+            this.toastsManager.error('Form invalid');
+            return;
+        }
+        this.rule.updatedAt = new Date();
+        this.rulesService.delete(this.rule)
+            .subscribe((rule) => {
+                this.toastsManager.success('Rule deleted');
+                this.router.navigate(['rules']);
+            });
+    }
+     
+    private formValid(): boolean {
         return this.rule.name ? true : false;
     }
-     cancel(): void {
+     
+    cancel(): void {
         this.router.navigate(['rules']);
     }
  }

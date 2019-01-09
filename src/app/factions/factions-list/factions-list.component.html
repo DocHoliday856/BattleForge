@@ -1,0 +1,23 @@
+<h1>
+  Factions
+</h1>
+
+
+<div class="row header-row">
+    <div class="col-md-6">
+        <strong>Faction</strong>
+    </div>
+    <div class="col-md-6">
+        <strong>Classification</strong>
+    </div>
+</div>
+
+
+<ul class="list-group">
+  <li *ngFor="let faction of factions" class="list-group-item faction-item" (click)="goToFaction(faction)">
+      <div class="row">
+        <div class="col-md-6">{{faction.name}}</div>
+        <div class="col-md-6">{{faction.classification}}</div>
+      </div>
+  </li>
+</ul>

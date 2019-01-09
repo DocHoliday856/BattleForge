@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ArmiesComponent } from './armies/armies.component';
 import { DetachmentsComponent } from './detachments/detachments.component';
-import { FactionsComponent } from './factions/factions.component';
+import { FactionsListComponent } from './factions/factions-list/factions-list.component';
 import { RulesListComponent } from './rules/rules-list/rules-list.component';
 import { RulesDetailComponent } from './rules/rules-detail/rules-detail.component';
 
@@ -21,7 +21,7 @@ const routes: Routes = [
 
   { path: 'detachment', component: DetachmentsComponent },
 
-  { path: 'faction', component: FactionsComponent},
+  { path: 'faction', component: FactionsListComponent},
   //{ path: 'faction', component: FactionListComponent },
   //{ path: 'faction/:factionId', component: FactionDetailComponent },
 

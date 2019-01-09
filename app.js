@@ -43,5 +43,6 @@ app.get('/rules', rules.getAll);
 app.get('/rules/:ruleId', rules.get);
 app.post('/rules', rules.create);
 app.put('/rules', rules.update);
+app.delete('/rules', rules.remove);
 
 module.exports = app;
