@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/observable';
+import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/do';
 import { sortByProperty } from '../common/common-functions.library';
 
@@ -24,18 +24,16 @@ export class RulesService {
     private http: HttpClient,
   ) { }
 
+  //Get Rules and sort them by name alphabetically
   getRules(): Observable<IRule[]> {
-    if (!this.rules) {
       return this.http.get<IRule[]>('http://localhost:3000/rules')
       .do((answer) => {
-        sortByProperty(answer, 'name');
+        sortByProperty<IRule>(answer, 'name');
         this.rules = answer;
       });
-    } else {
-      return Observable.of(this.rules);
-    }
       
   }
+
 
   getRuleById(id: number): Observable<IRule> {
       return this.http.get<IRule>(`http://localhost:3000/rules/${id}`);
