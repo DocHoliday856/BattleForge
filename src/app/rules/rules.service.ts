@@ -48,11 +48,11 @@ export class RulesService {
     }
   }
 
-  delete(rule: IRule): Observable<IRule> {
-    if (rule.id) {
-      return this.http.delete<IRule>(`http://localhost:3000/rules`);
-    } else {
-      return;
-    }
-  }
+  // delete(rule: IRule): Observable<IRule> {
+  //   if (rule.id) {
+  //     return this.http.delete<IRule>(`http://localhost:3000/rules`);
+  //   } else {
+  //     return;
+  //   }
+  // }
 }

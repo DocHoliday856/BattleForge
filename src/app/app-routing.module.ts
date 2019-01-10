@@ -4,8 +4,9 @@ import { HomeComponent } from './home/home.component';
 import { ArmiesComponent } from './armies/armies.component';
 import { DetachmentsComponent } from './detachments/detachments.component';
 import { FactionsListComponent } from './factions/factions-list/factions-list.component';
+import { FactionDetailComponent } from './factions/faction-detail/faction-detail.component';
 import { RulesListComponent } from './rules/rules-list/rules-list.component';
-import { RulesDetailComponent } from './rules/rules-detail/rules-detail.component';
+import { RuleDetailComponent } from './rules/rule-detail/rule-detail.component';
 
 
 
@@ -13,7 +14,6 @@ import { RulesDetailComponent } from './rules/rules-detail/rules-detail.componen
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  //{ path: '**', redirectTo: '/home', pathMatch: 'full' },
 
 
   { path: 'army', component: ArmiesComponent },
@@ -21,12 +21,11 @@ const routes: Routes = [
 
   { path: 'detachment', component: DetachmentsComponent },
 
-  { path: 'faction', component: FactionsListComponent},
-  //{ path: 'faction', component: FactionListComponent },
-  //{ path: 'faction/:factionId', component: FactionDetailComponent },
+  { path: 'factions', component: FactionsListComponent},
+  { path: 'factions/:factionId', component: FactionDetailComponent },
 
   { path: 'rules', component: RulesListComponent },
-  { path: 'rules/:ruleId', component: RulesDetailComponent },
+  { path: 'rules/:ruleId', component: RuleDetailComponent },
 
 ];
 

@@ -3,6 +3,7 @@ require('./config/config');
 const models = require("./models");
 const bodyParser = require('body-parser');
 const rules = require('./controllers/RulesController');
+const factions = require('./controllers/FactionsController');
 require('./global_functions');
 const app = express();
 
@@ -43,6 +44,12 @@ app.get('/rules', rules.getAll);
 app.get('/rules/:ruleId', rules.get);
 app.post('/rules', rules.create);
 app.put('/rules', rules.update);
-app.delete('/rules', rules.remove);
+//app.delete('/rules', rules.remove);
+
+app.get('/factions', factions.getAll);
+app.get('/factions/:factionId', factions.get);
+app.post('/factions', factions.create);
+app.put('/factions', factions.update);
+//app.delete('/factions', factions.remove);
 
 module.exports = app;

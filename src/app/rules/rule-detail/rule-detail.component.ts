@@ -4,10 +4,10 @@ import { IRule, RulesService } from '../rules.service';
 import { ToastsManager } from 'ng2-toastr';
  
 @Component({
-    templateUrl: './rules-detail.component.html',
+    templateUrl: './rule-detail.component.html',
 })
 
-export class RulesDetailComponent implements OnInit {
+export class RuleDetailComponent implements OnInit {
      rule: IRule;
      constructor(
         private route: ActivatedRoute,
@@ -57,18 +57,18 @@ export class RulesDetailComponent implements OnInit {
             });
     }
 
-    delete(): void {
-        if (!this.formValid()) {
-            this.toastsManager.error('Form invalid');
-            return;
-        }
-        this.rule.updatedAt = new Date();
-        this.rulesService.delete(this.rule)
-            .subscribe((rule) => {
-                this.toastsManager.success('Rule deleted');
-                this.router.navigate(['rules']);
-            });
-    }
+    // delete(): void {
+    //     if (!this.formValid()) {
+    //         this.toastsManager.error('Form invalid');
+    //         return;
+    //     }
+    //     this.rule.updatedAt = new Date();
+    //     this.rulesService.delete(this.rule)
+    //         .subscribe((rule) => {
+    //             this.toastsManager.success('Rule deleted');
+    //             this.router.navigate(['rules']);
+    //         });
+    // }
      
     private formValid(): boolean {
         return this.rule.name ? true : false;

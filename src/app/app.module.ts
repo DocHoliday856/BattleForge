@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpModule} from '@angular/http';
 import { NgModule } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -60,8 +61,10 @@ import {
 import { HomeComponent } from './home/home.component';
 import { ArmiesComponent } from './armies/armies.component';
 import { FactionsListComponent } from './factions/factions-list/factions-list.component';
+import { FactionDetailComponent } from './factions/faction-detail/faction-detail.component';
 import { DetachmentsComponent } from './detachments/detachments.component';
 import { RulesModule } from './rules/rules.module';
+import { FactionsModule } from './factions/factions.module';
 
 /**
  * NgModule that includes all Material modules that are required.
@@ -119,7 +122,6 @@ export class MaterialModule {}
     AppComponent,
     HomeComponent,
     ArmiesComponent,
-    FactionsListComponent,
   ],
   imports: [
     BrowserModule,
@@ -132,7 +134,9 @@ export class MaterialModule {}
     ToastModule.forRoot(),
     MaterialModule,
     HttpClientModule,
-    RulesModule
+    HttpModule,
+    RulesModule,
+    FactionsModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

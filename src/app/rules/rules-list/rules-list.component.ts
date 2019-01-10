@@ -4,13 +4,13 @@ import { Router } from '@angular/router';
 import { RulesService, IRule} from '../rules.service';
 
 
-
 @Component({
   selector: 'app-rules-list',
   templateUrl: './rules-list.component.html',
   styleUrls: ['./rules-list.component.less']
 })
 export class RulesListComponent implements OnInit {
+  
   rules: IRule[] = [];
 
   constructor(
@@ -24,8 +24,6 @@ export class RulesListComponent implements OnInit {
       (rules) => {
         this.rules = rules;
       })
-
-
   }
 
   goToAdd(): void {
@@ -36,5 +34,4 @@ export class RulesListComponent implements OnInit {
     this.router.navigate([`rules/${id}`]);
    }
   
-
 }
