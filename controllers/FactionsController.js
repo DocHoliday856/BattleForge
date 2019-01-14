@@ -38,7 +38,7 @@ const get = async (req, res) => {
     data = req.body;
   
   
-    [err, faction] = await to(factions.update(data, {
+    [err, faction] = await to(Factions.update(data, {
       where: {
         id: data.id
       }
