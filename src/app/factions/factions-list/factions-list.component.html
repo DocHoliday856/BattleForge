@@ -6,22 +6,21 @@
 <button class="btn btn-primary btn-block" (click)="goToAdd()">Add Faction</button>
 
 
-<div class="row header-row">
-    <div class="col-md-6">
-        <strong>Faction</strong>
+<div class="container">
+    <div class="row">
+      <div class="col-md-2 text-center"><strong>Faction</strong></div>
+      <div class="col-md-4"><strong>Classification</strong></div>
     </div>
-    <div class="col-md-6">
-        <strong>Classification</strong>
+    <div class="list-group">
+        <div class="list-group-item col-md-6" *ngFor="let faction of factions">
+            <div class="row factions" [style.cursor]="'pointer'" (click)="goToEdit(faction.id)">
+                <img src="{{faction.codex}}" class="codex col-md-4">
+                <ul class="classification col-md-8">
+                    <li><b>Name:</b> {{faction.name}}</li>
+                    <li><b>Classification:</b> {{faction.classification}}</li>
+                    <li><b>Description:</b> {{faction.quote}}</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
-
-
-<ul class="list-group">
-  <li *ngFor="let faction of factions" class="list-group-item faction-item" (click)="goToEdit(faction.id)">
-      <div class="col-mid-3">
-        <div>{{faction.name}}</div>
-        <img src="{{faction.codex}}" class="codex">
-        <div>{{faction.classification}}</div>
-      </div>
-  </li>
-</ul>

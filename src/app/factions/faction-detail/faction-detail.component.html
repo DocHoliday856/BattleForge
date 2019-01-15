@@ -2,15 +2,18 @@
     <div class="col-md-6">
       <div *ngIf="this.faction" class="well well-sm">
         <h4>Faction Info</h4>
-
+        
+        <label>Codex Url</label>
+        <textarea type="text" class="form-control" rows="3" [(ngModel)]="faction.codex" ></textarea>
+        
         <label>Name</label>
         <input type="text" class="form-control" [(ngModel)]="faction.name" />
          
-        <label>Codex Url</label>
-        <textarea type="text" class="form-control" rows="5" [(ngModel)]="faction.codex" ></textarea>
-         
         <label>Classification</label>
         <input type="text" class="form-control" [(ngModel)]="faction.classification" />
+
+        <label>Description</label>
+        <textarea type="text" class="form-control" rows="5" [(ngModel)]="faction.quote"></textarea>
          
         <br>
         <button class="btn btn-primary col-md-3" (click)="save()">Save</button>
