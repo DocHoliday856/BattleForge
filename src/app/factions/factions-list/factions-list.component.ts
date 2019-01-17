@@ -13,6 +13,7 @@ export class FactionsListComponent implements OnInit {
 
   factions: IFaction[] = [];
 
+
   constructor(
     private factionsService: FactionsService,
     private router: Router,

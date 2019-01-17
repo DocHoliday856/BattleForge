@@ -15,6 +15,16 @@ export interface IFaction {
     updatedAt: Date;
 }
 
+export const emptyFaction: IFaction = {
+  id: 0,
+  name: '',
+  codex: '',
+  quote: '',
+  classification: '',
+  createdAt: new Date(),
+  updatedAt: null,
+}
+
 @Injectable()
 export class FactionsService {
   

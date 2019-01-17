@@ -1,15 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IFaction, FactionsService } from '../factions.service';
+
 import { ToastsManager } from 'ng2-toastr';
  
 @Component({
     templateUrl: './faction-nav.component.html',
+    styleUrls: ['./faction-nav.component.less']
+
 })
 
 export class FactionNavComponent implements OnInit {
 
      faction: IFaction;
+  
+     isUnits = true;
+     isWargear = false;
+     isStrategems = false;
+     isWarlordTraits = false;
+     isPsykerPowers = false;
+
 
      constructor(
         private route: ActivatedRoute,
@@ -33,6 +43,15 @@ export class FactionNavComponent implements OnInit {
         const startTime = new Date();
         startTime.setHours(startTime.getHours() - (startTime.getTimezoneOffset() / 60));
         return startTime.toISOString().slice(0, 16);
+    }
+
+    getUnits(): void {
+        this.isUnits = true;
+    }
+
+    getWargear(): void {
+
+        this.isWargear = true;
     }
      
     // save(): void {

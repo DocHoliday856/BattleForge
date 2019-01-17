@@ -1,6 +1,6 @@
 <div style="text-align:center">
     <h1>
-      {{ faction.name }}!
+      {{ faction.name }}
     </h1>
     <img alt="Faction Codex" src="{{faction.codex}}">
   </div>
@@ -16,12 +16,58 @@
       </p>
   </body>
 
-  <div class="btn-group btn-group-lg" role="group" aria-label="Faction Categories">
-    <button type="button" class="btn btn-secondary">Units</button>
-    <button type="button" class="btn btn-secondary">Wargear</button>
-    <button type="button" class="btn btn-secondary">Strategems</button>
-    <button type="button" class="btn btn-secondary">Warlord Traits</button>
-    <button type="button" class="btn btn-secondary">Psyker Powers</button>
+  <div class="btn-group-wrap">
+
+    <div class="btn-group btn-group-lg" role="group" aria-label="Faction Categories">
+      
+      <div class="btn-group btn-group-lg" role="group">
+        <button id="units" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Units
+        </button>
+          <div class="dropdown-menu" aria-labelledby="units">
+            <a class="dropdown-item">Standard</a>
+            <a class="dropdown-item">Kill Team</a>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-secondary">Wargear</button>
+        <button type="button" class="btn btn-secondary">Strategems</button>
+        <button type="button" class="btn btn-secondary">Warlord Traits</button>
+        <button type="button" class="btn btn-secondary">Psyker Powers</button>
+
+      
+    </div>
+  </div>
+
+  <br/>
+
+  <div *ngIf="isUnits">
+    <p>
+      Future site of UNITS!
+    </p>
   </div>
   
+  <div *ngIf="isWargear">
+    <p>
+      Future site of WARGEAR!
+    </p>
+  </div>
+
+  <div *ngIf="isStrategems">
+    <p>
+      Future site of STRATEGEMS!
+    </p>
+  </div>
+
+  <div *ngIf="isWarlordTraits">
+    <p>
+      Future site of WARLORD TRAITS!
+    </p>
+  </div>
+
+  <div *ngIf="isPsykerPowers">
+    <p>
+      Future site of PSYKER POWERS!
+    </p>
+  </div>
   

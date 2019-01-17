@@ -6,6 +6,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { FactionDetailComponent } from './faction-detail/faction-detail.component';
 import { FactionNavComponent } from './faction-nav/faction-nav.component';
+import { MyMaterialModule } from  '../material.module';
+
 
 
 @NgModule({
@@ -17,6 +19,7 @@ import { FactionNavComponent } from './faction-nav/faction-nav.component';
     imports: [
         CommonModule,
         FormsModule,
+        MyMaterialModule,
     ],
     providers: [
         FactionsService,

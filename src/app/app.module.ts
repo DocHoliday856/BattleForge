@@ -22,40 +22,7 @@ import {PortalModule} from '@angular/cdk/portal';
 import {ScrollDispatchModule} from '@angular/cdk/scrolling';
 import {CdkStepperModule} from '@angular/cdk/stepper';
 import {CdkTableModule} from '@angular/cdk/table';
-import {
-  MatAutocompleteModule,
-  MatButtonModule,
-  MatButtonToggleModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatChipsModule,
-  MatDatepickerModule,
-  MatDialogModule,
-  MatDividerModule,
-  MatExpansionModule,
-  MatGridListModule,
-  MatIconModule,
-  MatInputModule,
-  MatListModule,
-  MatMenuModule,
-  MatNativeDateModule,
-  MatPaginatorModule,
-  MatProgressBarModule,
-  MatProgressSpinnerModule,
-  MatRadioModule,
-  MatRippleModule,
-  MatSelectModule,
-  MatSidenavModule,
-  MatSliderModule,
-  MatSlideToggleModule,
-  MatSnackBarModule,
-  MatSortModule,
-  MatStepperModule,
-  MatTableModule,
-  MatTabsModule,
-  MatToolbarModule,
-  MatTooltipModule,
-} from '@angular/material';
+import { MyMaterialModule } from  './material.module';
 // stuff we created
 
 import { HomeComponent } from './home/home.component';
@@ -79,35 +46,7 @@ import { FactionsModule } from './factions/factions.module';
     ScrollDispatchModule,
     CdkStepperModule,
     CdkTableModule,
-    
-    // Material
-    MatAutocompleteModule,
-    MatButtonModule,
-    MatButtonToggleModule,
-    MatCardModule,
-    MatCheckboxModule,
-    MatChipsModule,
-    MatDatepickerModule,
-    MatDialogModule,
-    MatExpansionModule,
-    MatGridListModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatMenuModule,
-    MatProgressBarModule,
-    MatProgressSpinnerModule,
-    MatRadioModule,
-    MatRippleModule,
-    MatSelectModule,
-    MatSidenavModule,
-    MatSlideToggleModule,
-    MatSliderModule,
-    MatSnackBarModule,
-    MatTabsModule,
-    MatToolbarModule,
-    MatTooltipModule,
-    MatNativeDateModule,
+    MyMaterialModule
   ],
   declarations: [DetachmentsComponent]
 })
