@@ -5,6 +5,7 @@ import { ArmiesComponent } from './armies/armies.component';
 import { DetachmentsComponent } from './detachments/detachments.component';
 import { FactionsListComponent } from './factions/factions-list/factions-list.component';
 import { FactionDetailComponent } from './factions/faction-detail/faction-detail.component';
+import { FactionNavComponent } from './factions/faction-nav/faction-nav.component';
 import { RulesListComponent } from './rules/rules-list/rules-list.component';
 import { RuleDetailComponent } from './rules/rule-detail/rule-detail.component';
 
@@ -22,7 +23,9 @@ const routes: Routes = [
   { path: 'detachment', component: DetachmentsComponent },
 
   { path: 'factions', component: FactionsListComponent},
-  { path: 'factions/:factionId', component: FactionDetailComponent },
+  { path: 'factions/edit/:factionId', component: FactionDetailComponent },
+  { path: 'factions/:factionId', component: FactionNavComponent },
+
 
   { path: 'rules', component: RulesListComponent },
   { path: 'rules/:ruleId', component: RuleDetailComponent },

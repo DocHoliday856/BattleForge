@@ -60,8 +60,6 @@ import {
 
 import { HomeComponent } from './home/home.component';
 import { ArmiesComponent } from './armies/armies.component';
-import { FactionsListComponent } from './factions/factions-list/factions-list.component';
-import { FactionDetailComponent } from './factions/faction-detail/faction-detail.component';
 import { DetachmentsComponent } from './detachments/detachments.component';
 import { RulesModule } from './rules/rules.module';
 import { FactionsModule } from './factions/factions.module';

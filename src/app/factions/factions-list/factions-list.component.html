@@ -1,3 +1,8 @@
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+
+
 <h1>
   Factions
 </h1>
@@ -13,10 +18,10 @@
     </div>
     <div class="list-group">
         <div class="list-group-item col-md-6" *ngFor="let faction of factions">
-            <div class="row factions" [style.cursor]="'pointer'" (click)="goToEdit(faction.id)">
-                <img src="{{faction.codex}}" class="codex col-md-4">
+            <div class="row factions"  >
+                <img src="{{faction.codex}}" class="codex col-md-4" [style.cursor]="'pointer'" (click)="goToFaction(faction.id)">
                 <ul class="classification col-md-8">
-                    <li><b>Name:</b> {{faction.name}}</li>
+                    <li><b>Name:</b> {{faction.name}} <a (click)="goToEdit(faction.id)" [style.cursor]="'pointer'"><span class="fas fa-book-open"></span></a></li>
                     <li><b>Classification:</b> {{faction.classification}}</li>
                     <li><b>Description:</b> {{faction.quote}}</li>
                 </ul>

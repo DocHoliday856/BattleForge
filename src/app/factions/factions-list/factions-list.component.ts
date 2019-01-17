@@ -31,6 +31,10 @@ export class FactionsListComponent implements OnInit {
   }
 
   goToEdit(id: number): void {
+    this.router.navigate([`factions/edit/${id}`]);
+  }
+
+  goToFaction(id: number): void {
     this.router.navigate([`factions/${id}`]);
   }
 
