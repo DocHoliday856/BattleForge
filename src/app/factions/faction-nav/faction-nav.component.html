@@ -21,27 +21,27 @@
     <div class="btn-group btn-group-lg" role="group" aria-label="Faction Categories">
       
       <div class="btn-group btn-group-lg" role="group">
-        <button id="units" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button id="units" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Units
         </button>
           <div class="dropdown-menu" aria-labelledby="units">
-            <a class="dropdown-item">Standard</a>
-            <a class="dropdown-item">Kill Team</a>
+            <a class="dropdown-item" value="Display.UNITS" (click)="form.controls['display'].value === Display.UNITS">Standard</a>
+            <a class="dropdown-item" value="Display.KTEAM" (click)="form.controls['display'].value === Display.KTEAM">Kill Team</a>
           </div>
         </div>
 
-        <button type="button" class="btn btn-secondary">Wargear</button>
-        <button type="button" class="btn btn-secondary">Strategems</button>
-        <button type="button" class="btn btn-secondary">Warlord Traits</button>
-        <button type="button" class="btn btn-secondary">Psyker Powers</button>
+        <button type="button" value="Display.WARGEAR" (click)="form.controls['display'].value === Display.WARGEAR" class="btn btn-secondary">Wargear</button>
+        <button type="button" value="Display.STRATEGEMS" (click)="form.controls['display'].value === Display.STRATEGEMS" class="btn btn-secondary">Strategems</button>
+        <button type="button" value="Display.WARLORD" (click)="form.controls['display'].value === Display.WARLORD" class="btn btn-secondary">Warlord Traits</button>
+        <button type="button" value="Display.PSYKER" (click)="form.controls['display'].value === Display.PSYKER" class="btn btn-secondary">Psyker Powers</button>
 
       
     </div>
   </div>
-
+  <button type="button" (click)="console.log(display.value)" class="btn btn-secondary">Status</button>
   <br/>
 
-  <div *ngIf="isUnits">
+  <div *ngIf="Display">
     <p>
       Future site of UNITS!
     </p>

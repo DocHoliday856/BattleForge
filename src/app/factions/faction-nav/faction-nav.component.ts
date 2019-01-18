@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IFaction, FactionsService } from '../factions.service';
-
+import { IFaction, FactionsService, emptyFaction } from '../factions.service';
+import { Display } from './display-Enum';
 import { ToastsManager } from 'ng2-toastr';
+import { FormGroup, FormBuilder } from '@angular/forms';
  
+
+
 @Component({
     templateUrl: './faction-nav.component.html',
     styleUrls: ['./faction-nav.component.less']
@@ -12,21 +15,26 @@ import { ToastsManager } from 'ng2-toastr';
 
 export class FactionNavComponent implements OnInit {
 
-     faction: IFaction;
+     faction: IFaction = {...emptyFaction};
   
-     isUnits = true;
-     isWargear = false;
-     isStrategems = false;
-     isWarlordTraits = false;
-     isPsykerPowers = false;
+     public form: FormGroup;
+     public Display = Display;
 
+
+   
 
      constructor(
         private route: ActivatedRoute,
         private router: Router,
         private factionsService: FactionsService,
         // private toastsManager: ToastsManager,
-    ) { }
+        fb: FormBuilder,
+    ) { 
+        this.form = fb.group({
+            'display' : []
+            
+          });
+    }
      
     ngOnInit() {
         let id: string | number = this.route.snapshot.paramMap.get('factionId');
@@ -45,46 +53,5 @@ export class FactionNavComponent implements OnInit {
         return startTime.toISOString().slice(0, 16);
     }
 
-    getUnits(): void {
-        this.isUnits = true;
-    }
 
-    getWargear(): void {
-
-        this.isWargear = true;
-    }
-     
-    // save(): void {
-    //     if (!this.formValid()) {
-    //         this.toastsManager.error('Form invalid');
-    //         return;
-    //     }
-    //     this.faction.updatedAt = new Date();
-    //     this.factionsService.save(this.faction)
-    //         .subscribe((faction) => {
-    //             this.toastsManager.success('Faction saved');
-    //             this.router.navigate(['factions']);
-    //         });
-    // }
-
-    // delete(): void {
-    //     if (!this.formValid()) {
-    //         this.toastsManager.error('Form invalid');
-    //         return;
-    //     }
-    //     this.faction.updatedAt = new Date();
-    //     this.factionsService.delete(this.faction)
-    //         .subscribe((faction) => {
-    //             this.toastsManager.success('Faction deleted');
-    //             this.router.navigate(['factions']);
-    //         });
-    // }
-     
-    // private formValid(): boolean {
-    //     return this.faction.name ? true : false;
-    // }
-     
-    // cancel(): void {
-    //     this.router.navigate(['factions']);
-    // }
  }
