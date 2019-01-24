@@ -21,6 +21,10 @@
     <div class="btn-group btn-group-lg" role="group" aria-label="Faction Categories">
       
       <div class="btn-group btn-group-lg" role="group">
+
+          <button type="button" (click)="setPage(Display.ABILITIES)" class="btn btn-secondary">Abilities</button>
+
+
         <button id="units" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Units
         </button>
@@ -35,6 +39,8 @@
         <button type="button" (click)="setPage(Display.WARLORD)" class="btn btn-secondary">Warlord Traits</button>
         <button type="button" (click)="setPage(Display.PSYKER)" class="btn btn-secondary">Psyker Powers</button>
         <button type="button" (click)="setPage(Display.SUBFACTION)" class="btn btn-secondary">Sub-Factions</button>
+        <button type="button" (click)="setPage(Display.TACTICS)" class="btn btn-secondary">Tactical Objectives</button>
+
 
 
       
@@ -43,6 +49,19 @@
   <br/>
 
 <div class="display-wrapper">
+
+    <div id="defaultPage" *ngIf="currentPage == null">
+        <p>
+          Select an option
+        </p>
+    </div>
+
+    <div *ngIf="currentPage == Display.ABILITIES">
+        <p>
+          Future site of ABILITIES!
+        </p>
+    </div>
+
   <div *ngIf="currentPage == Display.UNITS">
     <p>
       Future site of UNITS!
@@ -84,5 +103,12 @@
         Future site of Sub-Factions!
       </p>
   </div>
+
+  <div *ngIf="currentPage == Display.TACTICS">
+      <p>
+        Future site of TACTICAL OBJECTIVES!
+      </p>
+  </div>
+
 </div>
   
