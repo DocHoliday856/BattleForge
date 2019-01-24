@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/do';
 import { sortByProperty } from '../common/common-functions.library';
+import { Display } from './faction-nav/display-enum';
 
 
 export interface IFaction {

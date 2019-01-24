@@ -4,5 +4,6 @@ export enum Display {
     WARGEAR     = 3,
     STRATEGEMS  = 4,
     WARLORD     = 5,
-    PSYKER      = 6
+    PSYKER      = 6,
+    SUBFACTION  = 7
 }

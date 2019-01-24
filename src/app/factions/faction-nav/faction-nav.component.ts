@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { IFaction, FactionsService, emptyFaction } from '../factions.service';
 import { Display } from './display-Enum';
 import { ToastsManager } from 'ng2-toastr';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
  
 
 
@@ -19,22 +19,14 @@ export class FactionNavComponent implements OnInit {
   
      public form: FormGroup;
      public Display = Display;
-
-
-   
+     public currentPage: number;
 
      constructor(
         private route: ActivatedRoute,
         private router: Router,
         private factionsService: FactionsService,
         // private toastsManager: ToastsManager,
-        fb: FormBuilder,
-    ) { 
-        this.form = fb.group({
-            'display' : []
-            
-          });
-    }
+    ) { }
      
     ngOnInit() {
         let id: string | number = this.route.snapshot.paramMap.get('factionId');
@@ -51,6 +43,14 @@ export class FactionNavComponent implements OnInit {
         const startTime = new Date();
         startTime.setHours(startTime.getHours() - (startTime.getTimezoneOffset() / 60));
         return startTime.toISOString().slice(0, 16);
+    }
+
+    setPage( page: number): void {
+        this.currentPage = page;
+        console.log(this.currentPage)
+        console.log(page)
+
+
     }
 
 

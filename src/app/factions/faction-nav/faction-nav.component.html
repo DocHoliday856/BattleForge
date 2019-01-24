@@ -25,49 +25,64 @@
           Units
         </button>
           <div class="dropdown-menu" aria-labelledby="units">
-            <a class="dropdown-item" value="Display.UNITS" (click)="form.controls['display'].value === Display.UNITS">Standard</a>
-            <a class="dropdown-item" value="Display.KTEAM" (click)="form.controls['display'].value === Display.KTEAM">Kill Team</a>
+            <a class="dropdown-item" [style.cursor]="'pointer'" (click)="setPage(Display.UNITS)">Standard</a>
+            <a class="dropdown-item" [style.cursor]="'pointer'" (click)="setPage(Display.KTEAM)">Kill Team</a>
           </div>
         </div>
 
-        <button type="button" value="Display.WARGEAR" (click)="form.controls['display'].value === Display.WARGEAR" class="btn btn-secondary">Wargear</button>
-        <button type="button" value="Display.STRATEGEMS" (click)="form.controls['display'].value === Display.STRATEGEMS" class="btn btn-secondary">Strategems</button>
-        <button type="button" value="Display.WARLORD" (click)="form.controls['display'].value === Display.WARLORD" class="btn btn-secondary">Warlord Traits</button>
-        <button type="button" value="Display.PSYKER" (click)="form.controls['display'].value === Display.PSYKER" class="btn btn-secondary">Psyker Powers</button>
+        <button type="button" (click)="setPage(Display.WARGEAR)" class="btn btn-secondary">Wargear</button>
+        <button type="button" (click)="setPage(Display.STRATEGEMS)" class="btn btn-secondary">Strategems</button>
+        <button type="button" (click)="setPage(Display.WARLORD)" class="btn btn-secondary">Warlord Traits</button>
+        <button type="button" (click)="setPage(Display.PSYKER)" class="btn btn-secondary">Psyker Powers</button>
+        <button type="button" (click)="setPage(Display.SUBFACTION)" class="btn btn-secondary">Sub-Factions</button>
+
 
       
     </div>
   </div>
-  <button type="button" (click)="console.log(display.value)" class="btn btn-secondary">Status</button>
   <br/>
 
-  <div *ngIf="Display">
+<div class="display-wrapper">
+  <div *ngIf="currentPage == Display.UNITS">
     <p>
       Future site of UNITS!
     </p>
   </div>
+
+  <div *ngIf="currentPage == Display.KTEAM">
+      <p>
+        Future site of KILL TEAMS!
+      </p>
+    </div>
   
-  <div *ngIf="isWargear">
+  <div *ngIf="currentPage == Display.WARGEAR">
     <p>
       Future site of WARGEAR!
     </p>
   </div>
 
-  <div *ngIf="isStrategems">
+  <div *ngIf="currentPage == Display.STRATEGEMS">
     <p>
       Future site of STRATEGEMS!
     </p>
   </div>
 
-  <div *ngIf="isWarlordTraits">
+  <div *ngIf="currentPage == Display.WARLORD">
     <p>
       Future site of WARLORD TRAITS!
     </p>
   </div>
 
-  <div *ngIf="isPsykerPowers">
+  <div *ngIf="currentPage == Display.PSYKER">
     <p>
       Future site of PSYKER POWERS!
     </p>
   </div>
+
+  <div *ngIf="currentPage == Display.SUBFACTION">
+      <p>
+        Future site of Sub-Factions!
+      </p>
+  </div>
+</div>
   
