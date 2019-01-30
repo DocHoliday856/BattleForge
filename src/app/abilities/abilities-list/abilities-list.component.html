@@ -1,0 +1,22 @@
+<h1 id="title">
+  Abilities Reference
+</h1>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 text-center"><strong>Ability</strong></div>
+    <div class="col-md-6 text-center"><strong>Description</strong></div>
+    <div class="col-md-3 text-center"><strong>Reference</strong></div>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let ability of abilities">
+      <div class="row" [style.cursor]="'pointer'" (click)="goToEdit(ability.id)">
+        <div class="col-md-3 "><strong>{{ ability.name }}</strong></div>
+        <div class="col-md-6">{{ ability.description }}</div>
+        <div class="col-md-3"><em>{{ ability.reference }}</em></div>
+      </div>
+    </li>
+  </ul>
+  <button class="btn btn-primary btn-block" (click)="goToAdd()">Add Ability</button>
+</div>

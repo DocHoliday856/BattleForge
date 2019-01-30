@@ -1,33 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IRule, RulesService } from '../rules.service';
+import { IAbility, AbilitiesService } from '../abilities.service';
 import { ToastsManager } from 'ng2-toastr';
  
 @Component({
-    templateUrl: './rule-detail.component.html',
+    templateUrl: './ability-detail.component.html',
 })
 
-export class RuleDetailComponent implements OnInit {
-     rule: IRule;
+export class AbilityDetailComponent implements OnInit {
+    ability: IAbility;
      constructor(
         private route: ActivatedRoute,
         private router: Router,
-        private rulesService: RulesService,
+        private abilitiesService: AbilitiesService,
         private toastsManager: ToastsManager,
     ) { }
      
     ngOnInit() {
-        let id: string | number = this.route.snapshot.paramMap.get('ruleId');
+        let id: string | number = this.route.snapshot.paramMap.get('abilityId');
         id = isNaN(parseInt(id)) ? 0 : parseInt(id);
         if (id > 0) {
             // get from db
-            this.rulesService.getRuleById(id)
-                .subscribe((rule) => {
-                    this.rule = rule;
+            this.abilitiesService.getAbilityById(id)
+                .subscribe((ability) => {
+                    this.ability = ability;
                 });
         } else {
             // new
-            this.rule = {
+            this.ability = {
                 id: 0,
                 name: '',
                 description: '',
@@ -49,11 +49,11 @@ export class RuleDetailComponent implements OnInit {
             this.toastsManager.error('Form invalid');
             return;
         }
-        this.rule.updatedAt = new Date();
-        this.rulesService.save(this.rule)
-            .subscribe((rule) => {
-                this.toastsManager.success('Rule saved');
-                this.router.navigate(['rules']);
+        this.ability.updatedAt = new Date();
+        this.abilitiesService.save(this.ability)
+            .subscribe((ability) => {
+                this.toastsManager.success('Ability saved');
+                this.router.navigate(['abilities']);
             });
     }
 
@@ -62,19 +62,19 @@ export class RuleDetailComponent implements OnInit {
     //         this.toastsManager.error('Form invalid');
     //         return;
     //     }
-    //     this.rule.updatedAt = new Date();
-    //     this.rulesService.delete(this.rule)
-    //         .subscribe((rule) => {
-    //             this.toastsManager.success('Rule deleted');
-    //             this.router.navigate(['rules']);
+    //     this.ability.updatedAt = new Date();
+    //     this.abilitiesService.delete(this.ability)
+    //         .subscribe((ability) => {
+    //             this.toastsManager.success('Ability deleted');
+    //             this.router.navigate(['abilities']);
     //         });
     // }
      
     private formValid(): boolean {
-        return this.rule.name ? true : false;
+        return this.ability.name ? true : false;
     }
      
     cancel(): void {
-        this.router.navigate(['rules']);
+        this.router.navigate(['abilities']);
     }
  }

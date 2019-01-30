@@ -28,7 +28,7 @@ import { MyMaterialModule } from  './material.module';
 import { HomeComponent } from './home/home.component';
 import { ArmiesComponent } from './armies/armies.component';
 import { DetachmentsComponent } from './detachments/detachments.component';
-import { RulesModule } from './rules/rules.module';
+import { AbilitiesModule } from './abilities/abilities.module';
 import { FactionsModule } from './factions/factions.module';
 
 /**
@@ -72,7 +72,7 @@ export class MaterialModule {}
     MaterialModule,
     HttpClientModule,
     HttpModule,
-    RulesModule,
+    AbilitiesModule,
     FactionsModule,
     ],
   providers: [],

@@ -1,9 +1,9 @@
-const Rules = require('../models').Rules;
+const Abilities = require('../models').Abilities;
 const validator = require('validator');
 
 const getAll = async (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    let err, rules;
+    let err, abilities;
     
     let whereStatement = {};
     if (req.query.name) {
@@ -13,32 +13,32 @@ const getAll = async (req, res) => {
     }
 
 
-    [err, rules] = await to(Rules.findAll({where: whereStatement}));
-    return res.json(rules);
+    [err, abilities] = await to(Abilities.findAll({where: whereStatement}));
+    return res.json(abilities);
 }
 module.exports.getAll = getAll;
 
 const get = async (req, res) => {
-  let err, rule;
-  let ruleId = parseInt(req.params.ruleId)
+  let err, ability;
+  let abilityId = parseInt(req.params.abilityId)
   res.setHeader('Content-Type', 'application/json');
 
-  [err, rule] = await to(Rules.findById(ruleId))
-  if (!rule) {
+  [err, ability] = await to(Abilities.findById(abilityId))
+  if (!ability) {
     res.statusCode = 404;
     return res.json({ success: false, error: err });
   }
-  return res.json(rule);
+  return res.json(ability);
 }
   module.exports.get = get;
   
   
   const update = async function (req, res) {
-    let err, rule, data;
+    let err, ability, data;
     data = req.body;
   
   
-    [err, rule] = await to(Rules.update(data, {
+    [err, ability] = await to(Abilities.update(data, {
       where: {
         id: data.id
       }
@@ -53,7 +53,7 @@ const get = async (req, res) => {
       return res.json({ success: false, error: err });
     }
   
-    return res.json(rule);
+    return res.json(ability);
   }
   module.exports.update = update;
 
@@ -61,10 +61,10 @@ const get = async (req, res) => {
   
   const create = async function (req, res) {
     res.setHeader('Content-Type', 'application/json');
-    let err, rule, ruleInfo;
+    let err, ability, abilityInfo;
 
-  ruleInfo = req.body;
-    [err, rule] = await to(Rules.create(ruleInfo));
+    abilityInfo = req.body;
+    [err, ability] = await to(Abilities.create(abilityInfo));
     if (err) {
       if (typeof err == 'object' && typeof err.message != 'undefined') {
         err = err.message;
@@ -74,7 +74,7 @@ const get = async (req, res) => {
       res.statusCode = 422; // unprocessable entity
       return res.json({ success: false, error: err });
     }
-    [err, rule] = await to(rule.save());
+    [err, ability] = await to(ability.save());
     if (err) {
       if (typeof err == 'object' && typeof err.message != 'undefined') {
         err = err.message;
@@ -86,6 +86,6 @@ const get = async (req, res) => {
   
     }
     res.statusCode = 201;
-    return res.json(rule);
+    return res.json(ability);
   }
   module.exports.create = create;

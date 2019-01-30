@@ -1,16 +1,16 @@
 <div class="row">
     <div class="col-md-6">
-      <div *ngIf="this.rule" class="well well-sm">
-        <h4>Rule Info</h4>
+      <div *ngIf="this.ability" class="well well-sm">
+        <h4>Abilities Info</h4>
 
         <label>Name</label>
-        <input type="text" class="form-control" [(ngModel)]="rule.name" />
+        <input type="text" class="form-control" [(ngModel)]="ability.name" />
          
         <label>Description</label>
-        <textarea type="text" class="form-control" rows="5" [(ngModel)]="rule.description" ></textarea>
+        <textarea type="text" class="form-control" rows="5" [(ngModel)]="ability.description" ></textarea>
          
         <label>Reference</label>
-        <input type="text" class="form-control" [(ngModel)]="rule.reference" />
+        <input type="text" class="form-control" [(ngModel)]="ability.reference" />
          
         <br>
         <button class="btn btn-primary col-md-3" (click)="save()">Save</button>

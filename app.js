@@ -2,7 +2,7 @@ const express = require('express');
 require('./config/config');
 const models = require("./models");
 const bodyParser = require('body-parser');
-const rules = require('./controllers/RulesController');
+const abilities = require('./controllers/AbilitiesController');
 const factions = require('./controllers/FactionsController');
 require('./global_functions');
 const app = express();
@@ -38,11 +38,11 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.get('/rules', rules.getAll);
-app.get('/rules/:ruleId', rules.get);
-app.post('/rules', rules.create);
-app.put('/rules', rules.update);
-//app.delete('/rules', rules.remove);
+app.get('/abilities', abilities.getAll);
+app.get('/abilities/:abilityId', abilities.get);
+app.post('/abilities', abilities.create);
+app.put('/abilities', abilities.update);
+//app.delete('/abilities', abilities.remove);
 
 app.get('/factions', factions.getAll);
 app.get('/factions/:factionId', factions.get);
