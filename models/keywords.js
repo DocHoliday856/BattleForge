@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Keywords.associate = function(models) {
     models.Keywords.belongsToMany(models.Units, {through: 'UnitsKeywords' });
+    models.Keywords.belongsToMany(models.Factions, {through: 'FactionsKeywords' });
   }
   return Keywords;
 };
