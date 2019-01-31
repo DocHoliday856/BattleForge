@@ -1,8 +1,8 @@
-const Abilities = require('../models').Abilities;
+const Keywords = require('../models').Keywords;
 
 const getAll = async (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    let err, abilities;
+    let err, keywords;
     
     let whereStatement = {};
     if (req.query.name) {
@@ -12,32 +12,32 @@ const getAll = async (req, res) => {
     }
 
 
-    [err, abilities] = await to(Abilities.findAll({where: whereStatement}));
-    return res.json(abilities);
+    [err, keywords] = await to(Keywords.findAll({where: whereStatement}));
+    return res.json(keywords);
 }
 module.exports.getAll = getAll;
 
 const get = async (req, res) => {
-  let err, ability;
-  let abilityId = parseInt(req.params.abilityId)
+  let err, keyword;
+  let keywordId = parseInt(req.params.keywordId)
   res.setHeader('Content-Type', 'application/json');
 
-  [err, ability] = await to(Abilities.findById(abilityId))
-  if (!ability) {
+  [err, keyword] = await to(Keywords.findById(keywordId))
+  if (!keyword) {
     res.statusCode = 404;
     return res.json({ success: false, error: err });
   }
-  return res.json(ability);
+  return res.json(keyword);
 }
   module.exports.get = get;
   
   
   const update = async function (req, res) {
-    let err, ability, data;
+    let err, keyword, data;
     data = req.body;
   
   
-    [err, ability] = await to(Abilities.update(data, {
+    [err, keyword] = await to(Keywords.update(data, {
       where: {
         id: data.id
       }
@@ -52,7 +52,7 @@ const get = async (req, res) => {
       return res.json({ success: false, error: err });
     }
   
-    return res.json(ability);
+    return res.json(keyword);
   }
   module.exports.update = update;
 
@@ -60,11 +60,11 @@ const get = async (req, res) => {
   
   const create = async function (req, res) {
     res.setHeader('Content-Type', 'application/json');
-    let err, ability, abilityInfo;
+    let err, keyword, keywordInfo;
 
-    abilityInfo = req.body;
+    keywordInfo = req.body;
 
-    [err, ability] = await to(Abilities.create(abilityInfo));
+    [err, keyword] = await to(Keywords.create(keywordInfo));
     if (err) {
       if (typeof err == 'object' && typeof err.message != 'undefined') {
         err = err.message;
@@ -74,7 +74,7 @@ const get = async (req, res) => {
       res.statusCode = 422; // unprocessable entity
       return res.json({ success: false, error: err });
     }
-    [err, ability] = await to(ability.save());
+    [err, keyword] = await to(keyword.save());
     if (err) {
       if (typeof err == 'object' && typeof err.message != 'undefined') {
         err = err.message;
@@ -86,6 +86,6 @@ const get = async (req, res) => {
   
     }
     res.statusCode = 201;
-    return res.json(ability);
+    return res.json(keyword);
   }
   module.exports.create = create;

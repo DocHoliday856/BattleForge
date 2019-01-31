@@ -1,8 +1,8 @@
-const Abilities = require('../models').Abilities;
+const Models = require('../models').Models;
 
 const getAll = async (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    let err, abilities;
+    let err, models;
     
     let whereStatement = {};
     if (req.query.name) {
@@ -12,32 +12,32 @@ const getAll = async (req, res) => {
     }
 
 
-    [err, abilities] = await to(Abilities.findAll({where: whereStatement}));
-    return res.json(abilities);
+    [err, models] = await to(Models.findAll({where: whereStatement}));
+    return res.json(models);
 }
 module.exports.getAll = getAll;
 
 const get = async (req, res) => {
-  let err, ability;
-  let abilityId = parseInt(req.params.abilityId)
+  let err, model;
+  let modelId = parseInt(req.params.modelId)
   res.setHeader('Content-Type', 'application/json');
 
-  [err, ability] = await to(Abilities.findById(abilityId))
-  if (!ability) {
+  [err, model] = await to(Models.findById(modelId))
+  if (!model) {
     res.statusCode = 404;
     return res.json({ success: false, error: err });
   }
-  return res.json(ability);
+  return res.json(model);
 }
   module.exports.get = get;
   
   
   const update = async function (req, res) {
-    let err, ability, data;
+    let err, model, data;
     data = req.body;
   
   
-    [err, ability] = await to(Abilities.update(data, {
+    [err, model] = await to(Models.update(data, {
       where: {
         id: data.id
       }
@@ -52,7 +52,7 @@ const get = async (req, res) => {
       return res.json({ success: false, error: err });
     }
   
-    return res.json(ability);
+    return res.json(model);
   }
   module.exports.update = update;
 
@@ -60,11 +60,11 @@ const get = async (req, res) => {
   
   const create = async function (req, res) {
     res.setHeader('Content-Type', 'application/json');
-    let err, ability, abilityInfo;
+    let err, model, modelInfo;
 
-    abilityInfo = req.body;
+    modelInfo = req.body;
 
-    [err, ability] = await to(Abilities.create(abilityInfo));
+    [err, model] = await to(Models.create(modelInfo));
     if (err) {
       if (typeof err == 'object' && typeof err.message != 'undefined') {
         err = err.message;
@@ -74,7 +74,7 @@ const get = async (req, res) => {
       res.statusCode = 422; // unprocessable entity
       return res.json({ success: false, error: err });
     }
-    [err, ability] = await to(ability.save());
+    [err, model] = await to(model.save());
     if (err) {
       if (typeof err == 'object' && typeof err.message != 'undefined') {
         err = err.message;
@@ -86,6 +86,6 @@ const get = async (req, res) => {
   
     }
     res.statusCode = 201;
-    return res.json(ability);
+    return res.json(model);
   }
   module.exports.create = create;
