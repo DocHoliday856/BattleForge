@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Abilities', {
+    return queryInterface.createTable('FKeywords', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -12,12 +12,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      description: {
-        type: Sequelize.STRING
-      },
-      reference: {
-        type: Sequelize.STRING
-      },
+      // factionId: {
+      //   type: Sequelize.INTEGER,
+      //   allowNull: false,
+      // },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -29,6 +27,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Abilities');
+    return queryInterface.dropTable('FKeywords');
   }
 };
