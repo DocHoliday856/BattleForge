@@ -18,6 +18,9 @@ module.exports = {
       quote: {
         type: Sequelize.STRING
       },
+      description: {
+        type: Sequelize.STRING
+      },
       classification: {
         type: Sequelize.STRING
       },

@@ -1,5 +1,4 @@
 const Factions = require('../models').Factions;
-const validator = require('validator');
 
 const getAll = async (req, res) => {
     res.setHeader('Content-Type', 'application/json');
