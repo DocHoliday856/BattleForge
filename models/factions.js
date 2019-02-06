@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     name: { type: DataTypes.STRING, allowNull:false},
     codex: DataTypes.STRING,
     quote: DataTypes.STRING,
-    description: DataTypes.STRING,
+    // description: DataTypes.STRING,
     classification: DataTypes.STRING,
   }, {});
   Factions.associate = function(models) {

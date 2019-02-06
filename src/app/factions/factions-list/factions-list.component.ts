@@ -28,7 +28,7 @@ export class FactionsListComponent implements OnInit {
   }
 
   goToAdd(): void {
-    this.router.navigate(['factions/add']);
+    this.router.navigate(['factions/edit/add']);
   }
 
   goToEdit(id: number): void {

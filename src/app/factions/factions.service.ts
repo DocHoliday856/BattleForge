@@ -11,6 +11,7 @@ export interface IFaction {
     name: string;
     codex: string;
     quote: string;
+    // description: string;
     classification: string;
     createdAt: Date;
     updatedAt: Date;
@@ -21,6 +22,7 @@ export const emptyFaction: IFaction = {
   name: '',
   codex: '',
   quote: '',
+  // description: '',
   classification: '',
   createdAt: new Date(),
   updatedAt: null,

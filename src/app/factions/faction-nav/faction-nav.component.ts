@@ -15,7 +15,7 @@ import { FormGroup } from '@angular/forms';
 
 export class FactionNavComponent implements OnInit {
 
-     faction: IFaction = {...emptyFaction};
+     faction: IFaction = { ...emptyFaction };
   
      public form: FormGroup;
      public Display = Display;
@@ -32,11 +32,11 @@ export class FactionNavComponent implements OnInit {
         let id: string | number = this.route.snapshot.paramMap.get('factionId');
         id = isNaN(parseInt(id)) ? 0 : parseInt(id);
             
-        // get from db
-        this.factionsService.getFactionById(id)
-            .subscribe((faction) => {
-                this.faction = faction;
-            });
+            // get from db
+            this.factionsService.getFactionById(id)
+                .subscribe((faction) => {
+                    this.faction = faction;
+                });
     }
      
     getLocalDateTime(): string {
@@ -47,10 +47,6 @@ export class FactionNavComponent implements OnInit {
 
     setPage( page: number): void {
         this.currentPage = page;
-        console.log(this.currentPage)
-        console.log(page)
-
-
     }
 
 

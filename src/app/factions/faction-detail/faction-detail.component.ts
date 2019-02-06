@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IFaction, FactionsService } from '../factions.service';
+import { IFaction, FactionsService, emptyFaction } from '../factions.service';
 import { ToastsManager } from 'ng2-toastr';
  
 @Component({
@@ -8,7 +8,7 @@ import { ToastsManager } from 'ng2-toastr';
 })
 
 export class FactionDetailComponent implements OnInit {
-     faction: IFaction;
+     faction: IFaction = {...emptyFaction};
      constructor(
         private route: ActivatedRoute,
         private router: Router,
@@ -19,6 +19,7 @@ export class FactionDetailComponent implements OnInit {
     ngOnInit() {
         let id: string | number = this.route.snapshot.paramMap.get('factionId');
         id = isNaN(parseInt(id)) ? 0 : parseInt(id);
+        console.log(id);
         if (id > 0) {
             // get from db
             this.factionsService.getFactionById(id)
