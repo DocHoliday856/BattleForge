@@ -2,7 +2,7 @@
     <h1>
       {{ faction.name }}
     </h1>
-    <img alt="Faction Codex" src="{{faction.codex}}">
+    <img class="factionCodex" alt="Faction Codex" src="{{faction.codex}}">
   </div>
   
   
@@ -57,9 +57,7 @@
     </div>
 
     <div *ngIf="currentPage == Display.ABILITIES">
-        <p>
-          Future site of ABILITIES!
-        </p>
+        <app-abilities-list></app-abilities-list>
     </div>
 
   <div *ngIf="currentPage == Display.UNITS">

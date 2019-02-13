@@ -11,6 +11,9 @@ import { AbilityDetailComponent } from './ability-detail/ability-detail.componen
         AbilitiesListComponent,
         AbilityDetailComponent,
     ],
+    exports: [
+        AbilitiesListComponent,
+    ],
     imports: [
         CommonModule,
         FormsModule,
