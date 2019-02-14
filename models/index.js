@@ -48,7 +48,7 @@ const operatorsAliases = {
 const sequelize = new Sequelize(CONFIG.db_name, CONFIG.db_user, CONFIG.db_password, {
   host: CONFIG.db_host,
   dialect: CONFIG.db_dialect,
-  operatorsAliases: operatorsAliases
+  operatorsAliases: operatorsAliases,
 });
 
 fs
