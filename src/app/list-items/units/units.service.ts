@@ -5,63 +5,66 @@ import 'rxjs/add/operator/do';
 import { sortByProperty } from '../../common/common-functions.library';
 
 
-export interface IWarlord {
+export interface IUnit {
     id: number;
     name: string;
-    codex: string;
-    quote: string;
-    classification: string;
+    description: string;
+    basePower: number;
+    choice: number;
+    factionId: number;
     createdAt: Date;
     updatedAt: Date;
 }
 
-export const emptyWarlord: IWarlord = {
+
+export const emptyUnit: IUnit = {
   id: 0,
   name: '',
-  codex: '',
-  quote: '',
-  classification: '',
+  description: '',
+  basePower: 0,
+  choice: 0,
+  factionId: 0,
   createdAt: new Date(),
   updatedAt: null,
 }
 
 @Injectable()
-export class WarlordsService {
+export class UnitsService {
   
-  warlords: IWarlord[] = [];
+  units: IUnit[] = [];
   
   
   constructor(
     private http: HttpClient,
   ) { }
 
-  //Get warlords and sort them by name alphabetically
-  getwarlords(): Observable<IWarlord[]> {
-      return this.http.get<IWarlord[]>('http://localhost:3000/warlords')
+  //Get units and sort them by name alphabetically
+  getUnits(): Observable<IUnit[]> {
+      return this.http.get<IUnit[]>('http://localhost:3000/units')
       .do((answer) => {
-        sortByProperty<IWarlord>(answer, 'name');
-        this.warlords = answer;
+        sortByProperty<IUnit>(answer, 'name');
+        this.units = answer;
       });
       
   }
 
 
-  getwarlordById(id: number): Observable<IWarlord> {
-      return this.http.get<IWarlord>(`http://localhost:3000/warlords/${id}`);
+  getUnitById(id: number): Observable<IUnit> {
+      return this.http.get<IUnit>(`http://localhost:3000/units/${id}`);
   }
 
 
-  save(warlord: IWarlord): Observable<IWarlord | number[]> {
-    if (warlord.id) {
-      return this.http.put<number[]>(`http://localhost:3000/warlords`, warlord);
+  save(unit: IUnit): Observable<IUnit | number[]> {
+    if (unit.id) {
+      return this.http.put<number[]>(`http://localhost:3000/units`, unit);
     } else {
-      return this.http.post<IWarlord>(`http://localhost:3000/warlords`, warlord);
+      return this.http.post<IUnit>(`http://localhost:3000/units`, unit);
     }
   }
 
-//   delete(warlord: Iwarlord): Observable<Iwarlord> {
-//     if (warlord.id) {
-//       return this.http.delete<Iwarlord>(`http://localhost:3000/warlords`);
+//   delete(unit: IUnit): Observable<IUnit> {
+//     if (unit.id) {
+//       return this.http.delete<IUnit>(`http://localhost:3000/units`);
 //     } else {
 //       return;
 //     }
