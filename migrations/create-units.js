@@ -20,11 +20,11 @@ module.exports = {
       },
       
       basePower: { 
-        type: DataTypes.INTEGER 
+        type: Sequelize.INTEGER 
       },
 
-      choice: { 
-        type: DataTypes.ENUM('HQ', 'Troops', 'Elites', 'Fast Attack', 'Heavy Support', 'Dedicated Transport', 'Flyer', 'Fortification', 'Lord of War')
+      role: { 
+        type: Sequelize.ENUM('HQ', 'Troops', 'Elites', 'Fast Attack', 'Heavy Support', 'Dedicated Transport', 'Flyer', 'Fortification', 'Lord of War')
       },  
 
       

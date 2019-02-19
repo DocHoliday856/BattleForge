@@ -32,7 +32,7 @@ export class UnitDetailComponent implements OnInit {
                 name: '',
                 description: '',
                 basePower: 0,
-                choice: 0,
+                role: 0,
                 factionId: 0,
                 createdAt: new Date(),
                 updatedAt: null,

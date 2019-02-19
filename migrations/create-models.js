@@ -20,47 +20,47 @@ module.exports = {
       },
 
       example: { 
-        type: DataTypes.STRING 
+        type: Sequelize.STRING 
       },
     
       move: { 
-        type: DataTypes.INTEGER 
+        type: Sequelize.INTEGER 
       },
     
       weapon: { 
-        type: DataTypes.INTEGER 
+        type: Sequelize.INTEGER 
       },
     
       ballistic: { 
-        type: DataTypes.INTEGER 
+        type: Sequelize.INTEGER 
       },
     
       strength: { 
-        type: DataTypes.INTEGER 
+        type: Sequelize.INTEGER 
       },
     
       toughness: { 
-        type: DataTypes.INTEGER 
+        type: Sequelize.INTEGER 
       },
     
       wounds: { 
-        type: DataTypes.INTEGER 
+        type: Sequelize.INTEGER 
       },
     
       attacks: { 
-        type: DataTypes.INTEGER 
+        type: Sequelize.INTEGER 
       },
     
       leadership: { 
-        type: DataTypes.INTEGER 
+        type: Sequelize.INTEGER 
       },
     
       save: { 
-        type: DataTypes.INTEGER 
+        type: Sequelize.INTEGER 
       },
     
       points: { 
-        type: DataTypes.INTEGER 
+        type: Sequelize.INTEGER 
       },
 
       createdAt: {

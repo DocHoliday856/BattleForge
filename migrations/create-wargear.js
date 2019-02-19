@@ -16,43 +16,43 @@ module.exports = {
       },
       
       flavor: { 
-        type: DataTypes.STRING 
+        type: Sequelize.STRING 
       },
       
       description: { 
-        type: DataTypes.STRING 
+        type: Sequelize.STRING 
       },
       
       points: { 
-        type: DataTypes.INTEGER 
+        type: Sequelize.INTEGER 
       },
       
       weapon: { 
-        type: DataTypes.BOOLEAN 
+        type: Sequelize.BOOLEAN 
       },
       
       range: { 
-        type: DataTypes.STRING 
+        type: Sequelize.STRING 
       },
       
       type: { 
-        type: DataTypes.STRING 
+        type: Sequelize.STRING 
       },
       
       strength: { 
-        type: DataTypes.STRING 
+        type: Sequelize.STRING 
       },
       
       armorPen: { 
-        type: DataTypes.INTEGER 
+        type: Sequelize.INTEGER 
       },
       
       damage: { 
-        type: DataTypes.STRING 
+        type: Sequelize.STRING 
       },
       
       abilities: { 
-        type: DataTypes.STRING 
+        type: Sequelize.STRING 
       },
       
       createdAt: {

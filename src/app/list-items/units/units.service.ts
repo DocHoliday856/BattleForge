@@ -10,7 +10,7 @@ export interface IUnit {
     name: string;
     description: string;
     basePower: number;
-    choice: number;
+    role: number;
     factionId: number;
     createdAt: Date;
     updatedAt: Date;
@@ -22,7 +22,7 @@ export const emptyUnit: IUnit = {
   name: '',
   description: '',
   basePower: 0,
-  choice: 0,
+  role: 0,
   factionId: 0,
   createdAt: new Date(),
   updatedAt: null,

@@ -1,5 +1,6 @@
 const express = require('express');
-require('./config/config');
+var env       = process.env.NODE_ENV || 'development';
+const CONFIG = require('./config/config')[env]; // Was missing when we SET CONFIG
 const models = require("./models");
 const bodyParser = require('body-parser');
 const abilities = require('./controllers/AbilitiesController');
@@ -21,7 +22,7 @@ models.sequelize
     console.log('Unable to connect to the database:', err);
   });
 
-if (CONFIG.app == 'development') {
+if (env == 'development') {
   //models.sequelize.sync();
   models.sequelize.sync({
     force: true

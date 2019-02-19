@@ -1,9 +1,29 @@
-CONFIG = {};
+const fs = require('fs');
 
-CONFIG.app = 'development';
-CONFIG.db_name = 'BattleForge';
-CONFIG.db_user = 'root';
-CONFIG.db_password = 'LordVader@138!';
-CONFIG.db_dialect = 'mysql';
-//CONFIG.jwt_encryption = 'aiwushfaeiuvnaeifunva02';
-//CONFIG.jwt_expiration = '1000';
+module.exports = {
+
+    development: {
+        username: 'root',
+        password: 'LordVader@138!',
+        database: 'BattleForge',
+        host: '127.0.0.1',
+        dialect: 'mysql'
+      },
+      test: {
+        username: 'root',
+        password: 'LordVader@138!',
+        database: 'BattleForge',
+        host: '127.0.0.1',
+        dialect: 'mysql'
+      },
+      production: {
+        username: 'root',
+        password: 'LordVader@138!',
+        database: 'BattleForge',
+        host: '127.0.0.1',
+        dialect: 'mysql'
+      },
+      
+    };
+
+

@@ -1,10 +1,12 @@
 'use strict';
 
-var fs = require('fs');
-var path = require('path');
+var fs        = require('fs');
+var path      = require('path');
 var Sequelize = require('sequelize');
-var basename = path.basename(__filename);
-var db = {};
+var basename  = path.basename(__filename);
+var db        = {};
+var env       = process.env.NODE_ENV || 'development';
+const CONFIG  = require('../config/config.json')[env]; // Was declaring env after it was being used in getting the config
 
 const Op = Sequelize.Op;
 const operatorsAliases = {
@@ -45,9 +47,10 @@ const operatorsAliases = {
 };
 
 
-const sequelize = new Sequelize(CONFIG.db_name, CONFIG.db_user, CONFIG.db_password, {
-  host: CONFIG.db_host,
-  dialect: CONFIG.db_dialect,
+
+const sequelize = new Sequelize(CONFIG.database, CONFIG.username, CONFIG.password, {
+  host: CONFIG.host,
+  dialect: CONFIG.dialect,
   operatorsAliases: operatorsAliases,
 });
 

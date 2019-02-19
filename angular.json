@@ -28,7 +28,7 @@
             ],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.css",
-              "src/styles.less",
+              "src/styles.less"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.js",

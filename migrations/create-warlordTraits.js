@@ -16,15 +16,15 @@ module.exports = {
       },
       
       flavor: {
-        type: DataTypes.STRING,
+        type: Sequelize.STRING,
       },
     
       description: {
-        type: DataTypes.STRING,
+        type: Sequelize.STRING,
       },
     
       roll: {
-        type: DataTypes.INTEGER,
+        type: Sequelize.INTEGER,
       },
       
       createdAt: {
