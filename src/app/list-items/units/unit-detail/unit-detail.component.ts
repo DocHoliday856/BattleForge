@@ -4,7 +4,7 @@ import { IUnit, UnitsService } from '../units.service';
 import { ToastsManager } from 'ng2-toastr';
  
 @Component({
-    templateUrl: './ability-detail.component.html',
+    templateUrl: './unit-detail.component.html',
 })
 
 export class UnitDetailComponent implements OnInit {

@@ -8,6 +8,7 @@ import { FactionDetailComponent } from './faction-detail/faction-detail.componen
 import { FactionNavComponent } from './faction-nav/faction-nav.component';
 import { MyMaterialModule } from  '../material.module';
 import { AbilitiesModule } from '../abilities/abilities.module';
+import { UnitsModule } from '../list-items/units/units.module';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AbilitiesModule } from '../abilities/abilities.module';
         CommonModule,
         FormsModule,
         MyMaterialModule,
-        AbilitiesModule
+        AbilitiesModule,
+        UnitsModule
     ],
     providers: [
         FactionsService,

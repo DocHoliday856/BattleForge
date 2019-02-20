@@ -30,6 +30,7 @@ import { ArmiesComponent } from './armies/armies.component';
 import { DetachmentsComponent } from './detachments/detachments.component';
 import { AbilitiesModule } from './abilities/abilities.module';
 import { FactionsModule } from './factions/factions.module';
+import { UnitsModule } from './list-items/units/units.module';
 
 /**
  * NgModule that includes all Material modules that are required.
@@ -74,6 +75,7 @@ export class MaterialModule {}
     HttpModule,
     AbilitiesModule,
     FactionsModule,
+    UnitsModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

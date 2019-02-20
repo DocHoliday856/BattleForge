@@ -8,6 +8,8 @@ import { FactionDetailComponent } from './factions/faction-detail/faction-detail
 import { FactionNavComponent } from './factions/faction-nav/faction-nav.component';
 import { AbilitiesListComponent } from './abilities/abilities-list/abilities-list.component';
 import { AbilityDetailComponent } from './abilities/ability-detail/ability-detail.component';
+import { UnitsListComponent } from './list-items/units/units-list/units-list.component';
+import { UnitDetailComponent } from './list-items/units/unit-detail/unit-detail.component';
 
 
 
@@ -29,6 +31,9 @@ const routes: Routes = [
 
   { path: 'abilities', component: AbilitiesListComponent },
   { path: 'abilities/:abilityId', component: AbilityDetailComponent },
+
+  { path: 'units', component: UnitsListComponent },
+  { path: 'units/:unitId', component: UnitDetailComponent},
 
 ];
 

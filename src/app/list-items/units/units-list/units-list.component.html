@@ -1,5 +1,26 @@
-<h1> Future site of units</h1>
+<h1 class="title"> Units</h1>
 
 <div class="container">
-    <ul class="list-"
+  <div class="list-group">
+    <div class="list-group-item" *ngFor="let unit of units">
+      <div class="row unit topRow" [style.cursor]="'pointer'" (click)="goToEdit(unit.id)">
+
+        <div class="topRow">
+
+          <div class="row">
+            <div class="col-md-2"><strong>{{ unit.role }}</strong></div>
+            <div class="col-md-8 name"><strong>{{ unit.name }}</strong></div>
+            <div class="col-md-2"><strong>Power: {{ unit.basePower }}</strong></div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12"><em>{{ unit.description }}</em></div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary btn-block" (click)="goToAdd()">Add Unit</button>
 </div>

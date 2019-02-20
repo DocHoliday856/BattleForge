@@ -4,7 +4,16 @@ module.exports = (sequelize, DataTypes) => {
     name: { type: DataTypes.STRING, allowNull: false },
     description: { type: DataTypes.STRING },
     basePower: { type: DataTypes.INTEGER },
-    role: { type: DataTypes.ENUM('HQ', 'Troops', 'Elites', 'Fast Attack', 'Heavy Support', 'Dedicated Transport', 'Flyer', 'Fortification', 'Lord of War')},  
+    role: { type: DataTypes.ENUM(
+        'HQ', 
+        'Troops', 
+        'Elites', 
+        'Fast Attack', 
+        'Heavy Support', 
+        'Dedicated Transport', 
+        'Flyer', 
+        'Fortification', 
+        'Lord of War')},  
     
     factionId: { type: DataTypes.INTEGER, allownull: false },
   }, {});
