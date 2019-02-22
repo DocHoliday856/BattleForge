@@ -1,0 +1,41 @@
+<div class="row">
+        <div class="col-md-6">
+          <div *ngIf="this.unit" class="well well-sm">
+            <h4>Unit Info</h4>
+            
+            <label>Name</label>
+            <textarea type="text" class="form-control" rows="3" [(ngModel)]="unit.name" name="name" ></textarea>
+            
+            <label>Role</label>
+            <select required [(ngModel)]="unit.role" name="role">
+                <option value="Roles.HQ">HQ</option>
+                <option value="Roles.Troops">Troops</option>
+                <option value="Roles.Elites">Elites</option>
+                <option value="Roles.FastAttack">Fast Attack</option>
+                <option value="Roles.HeavySupport">Heavy Support</option>
+                <option value="Roles.DedicatedTransport">Dedicated Transport</option>
+                <option value="Roles.Flyer">Flyer</option>
+                <option value="Roles.Fortification">Fortification</option>
+                <option value="Roles.LordOfWar">Lord Of War</option>
+            </select>
+            
+            <label>Base Power</label>
+            <input type="number" class="form-control" [(ngModel)]="unit.basePower" name="power" min="1" max="200">
+            
+            <label>Description</label>
+            <textarea type="text" class="form-control" rows="5" [(ngModel)]="unit.description" name="description"></textarea>
+            
+            <label>Faction</label>
+            <select required [(ngModel)]="unit.factionId" name="faction">
+                <option ng-repeat="faction in ???" value="{{faction.id}}">{{faction.name}}</option>
+            </select>
+
+            <br>
+            <button class="btn btn-primary col-md-3" (click)="save()">Save</button>
+            <button class="btn btn-outline-warning" (click)="cancel()">Cancel</button>
+            <button class="btn btn-outline-danger float-right" (click)="delete()">Delete</button>
+            
+           
+           </div>
+        </div>
+      </div>

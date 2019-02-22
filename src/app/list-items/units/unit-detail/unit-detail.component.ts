@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IUnit, UnitsService } from '../units.service';
 import { ToastsManager } from 'ng2-toastr';
+import { Roles } from '../role-enum';
+
  
 @Component({
     templateUrl: './unit-detail.component.html',
