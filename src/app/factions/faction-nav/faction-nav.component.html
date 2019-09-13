@@ -1,108 +1,108 @@
-  <div class="col-md-4 title-wrapper">
+<div class="col-md-4 title-wrapper">
   <div style="text-align:center">
     <h1>
       {{ faction.name }}
     </h1>
     <img class="factionCodex" alt="Faction Codex" src="{{faction.codex}}">
   </div>
-  
-    <p>
-      {{ faction.quote }}
-    </p>
-  
+
+  <p>
+    {{ faction.quote }}
+  </p>
+
 </div>
 
-<div class="nav-wrapper">
-<div class="col-md-8 btn-group-wrap">
+<div class="col-md-8 nav-wrapper">
+  <div class="btn-group-wrap">
 
-  <div class="btn-group btn-group-lg" role="group" aria-label="Faction Categories">
+    <div class="btn-group btn-group-lg" role="group" aria-label="Faction Categories">
 
-    <div class="btn-group btn-group-lg" role="group">
+      <div class="btn-group btn-group-lg" role="group">
 
-      <button type="button" (click)="setPage(Display.ABILITIES)" class="btn btn-secondary">Abilities</button>
+        <button type="button" (click)="setPage(Display.ABILITIES)" class="btn btn-secondary">Abilities</button>
 
 
-      <button id="units" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-        aria-expanded="false">
-        Units
-      </button>
-      <div class="dropdown-menu" aria-labelledby="units">
-        <a class="dropdown-item" [style.cursor]="'pointer'" (click)="setPage(Display.UNITS)">Standard</a>
-        <a class="dropdown-item" [style.cursor]="'pointer'" (click)="setPage(Display.KTEAM)">Kill Team</a>
+        <button id="units" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Units
+        </button>
+        <div class="dropdown-menu" aria-labelledby="units">
+          <a class="dropdown-item" [style.cursor]="'pointer'" (click)="setPage(Display.UNITS)">Standard</a>
+          <a class="dropdown-item" [style.cursor]="'pointer'" (click)="setPage(Display.KTEAM)">Kill Team</a>
+        </div>
       </div>
+
+      <button type="button" (click)="setPage(Display.WARGEAR)" class="btn btn-secondary">Wargear</button>
+      <button type="button" (click)="setPage(Display.STRATEGEMS)" class="btn btn-secondary">Strategems</button>
+      <button type="button" (click)="setPage(Display.WARLORD)" class="btn btn-secondary">Warlord Traits</button>
+      <button type="button" (click)="setPage(Display.PSYKER)" class="btn btn-secondary">Psyker Powers</button>
+      <button type="button" (click)="setPage(Display.SUBFACTION)" class="btn btn-secondary">Sub-Factions</button>
+      <button type="button" (click)="setPage(Display.TACTICS)" class="btn btn-secondary">Tactical Objectives</button>
+
+
+
+
+    </div>
+  </div>
+  <br />
+
+  <div class="display-wrapper">
+
+    <div id="defaultPage" *ngIf="currentPage == null">
+      <p>
+        Select an option
+      </p>
     </div>
 
-    <button type="button" (click)="setPage(Display.WARGEAR)" class="btn btn-secondary">Wargear</button>
-    <button type="button" (click)="setPage(Display.STRATEGEMS)" class="btn btn-secondary">Strategems</button>
-    <button type="button" (click)="setPage(Display.WARLORD)" class="btn btn-secondary">Warlord Traits</button>
-    <button type="button" (click)="setPage(Display.PSYKER)" class="btn btn-secondary">Psyker Powers</button>
-    <button type="button" (click)="setPage(Display.SUBFACTION)" class="btn btn-secondary">Sub-Factions</button>
-    <button type="button" (click)="setPage(Display.TACTICS)" class="btn btn-secondary">Tactical Objectives</button>
+    <div *ngIf="currentPage == Display.ABILITIES">
+      <app-abilities-list></app-abilities-list>
+    </div>
 
+    <div *ngIf="currentPage == Display.UNITS">
+      <app-units-list></app-units-list>
+    </div>
 
+    <div *ngIf="currentPage == Display.KTEAM">
+      <p>
+        Future site of KILL TEAMS!
+      </p>
+    </div>
 
+    <div *ngIf="currentPage == Display.WARGEAR">
+      <p>
+        Future site of WARGEAR!
+      </p>
+    </div>
+
+    <div *ngIf="currentPage == Display.STRATEGEMS">
+      <p>
+        Future site of STRATEGEMS!
+      </p>
+    </div>
+
+    <div *ngIf="currentPage == Display.WARLORD">
+      <p>
+        Future site of WARLORD TRAITS!
+      </p>
+    </div>
+
+    <div *ngIf="currentPage == Display.PSYKER">
+      <p>
+        Future site of PSYKER POWERS!
+      </p>
+    </div>
+
+    <div *ngIf="currentPage == Display.SUBFACTION">
+      <p>
+        Future site of Sub-Factions!
+      </p>
+    </div>
+
+    <div *ngIf="currentPage == Display.TACTICS">
+      <p>
+        Future site of TACTICAL OBJECTIVES!
+      </p>
+    </div>
 
   </div>
-</div>
-<br />
-
-<div class="display-wrapper">
-
-  <div id="defaultPage" *ngIf="currentPage == null">
-    <p>
-      Select an option
-    </p>
-  </div>
-
-  <div *ngIf="currentPage == Display.ABILITIES">
-    <app-abilities-list></app-abilities-list>
-  </div>
-
-  <div *ngIf="currentPage == Display.UNITS">
-    <app-units-list></app-units-list>
-  </div>
-
-  <div *ngIf="currentPage == Display.KTEAM">
-    <p>
-      Future site of KILL TEAMS!
-    </p>
-  </div>
-
-  <div *ngIf="currentPage == Display.WARGEAR">
-    <p>
-      Future site of WARGEAR!
-    </p>
-  </div>
-
-  <div *ngIf="currentPage == Display.STRATEGEMS">
-    <p>
-      Future site of STRATEGEMS!
-    </p>
-  </div>
-
-  <div *ngIf="currentPage == Display.WARLORD">
-    <p>
-      Future site of WARLORD TRAITS!
-    </p>
-  </div>
-
-  <div *ngIf="currentPage == Display.PSYKER">
-    <p>
-      Future site of PSYKER POWERS!
-    </p>
-  </div>
-
-  <div *ngIf="currentPage == Display.SUBFACTION">
-    <p>
-      Future site of Sub-Factions!
-    </p>
-  </div>
-
-  <div *ngIf="currentPage == Display.TACTICS">
-    <p>
-      Future site of TACTICAL OBJECTIVES!
-    </p>
-  </div>
-
-</div>
 </div>
