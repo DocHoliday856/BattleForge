@@ -8,9 +8,9 @@
     <form>
       <div class="form-group">
           <div class="input-group-prepend">
-            <input type="text" #searchFaction class="form-control" placeholder="Quicksearch (Orks, Boltgun, Fleet, etc...)" name="battleForge" ngModel>
-            <span class="input-group-text"
-            (click)="addBF (searchFaction.value) ">Add</span>
+            <input id="search-box" type="text" #searchFaction class="form-control" placeholder="Quicksearch (Orks, Boltgun, Fleet, etc...)" name="battleForge" ngModel>
+            <span id="search-button" class="input-group-text"
+            (click)="addBF (searchFaction.value) ">Search</span>
           </div>
       </div>
     </form>
