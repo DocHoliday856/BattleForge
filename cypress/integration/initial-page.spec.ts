@@ -19,11 +19,16 @@ describe('home page', () => {
     //     cy.get('@NavLinks').eq(3).should('contain', 'QuickSearch');   
     // })
 
-    it(`has the correct nav links with ids`, () => {
-        cy.get('#armyLink').contains('Armies');
-        cy.get('#factionsLink').contains('Factions');
-        cy.get('#abilitiesLink').contains('Abilities');
-        cy.get('#homeLink').contains('QuickSearch');
+    it(`has the correct nav links and they direct to the appropriate url`, () => {
+        cy.get('#sidenav').click();
+        cy.get('#armyLink').contains('Armies').click();
+        cy.url().should('include', '/army');
+        cy.get('#factionsLink').contains('Factions').click();
+        cy.url().should('include', '/factions');
+        cy.get('#abilitiesLink').contains('Abilities').click();
+        cy.url().should('include', '/abilities');
+        cy.get('#homeLink').contains('QuickSearch').click();
+        cy.url().should('include', '/home');
     })
 
     it(`has the correct logo`, () => {

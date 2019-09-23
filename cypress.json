@@ -2,6 +2,8 @@
     "baseUrl": "http://localhost:4200",
     "defaultCommandTimeout": 6000,
     "blacklistHosts": "*google-analytics.com",
+    "chromeWebSecurity": false,
+    "reporter": "nyan",
     "env": {
         "defaultTitle": "BattleForge"
     }
