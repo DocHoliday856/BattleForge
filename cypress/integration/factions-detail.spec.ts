@@ -1,7 +1,7 @@
 describe('Factions Page', () => {
 
     beforeEach(() => {
-        cy.visit("/factions");
+        cy.seedAndVisit()
     })
 
     it('contains faction links', () => {

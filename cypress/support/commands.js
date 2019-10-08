@@ -23,3 +23,12 @@
 //
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+
+Cypress.Commands.add('seedAndVisit', (seedData = 'fixture:multiFaction') => {
+    cy.server();
+    cy.route('GET', 'http://localhost:3000/factions', seedData)
+        .as('seed');
+    cy.visit("/factions");
+    cy.wait('@seed');
+});

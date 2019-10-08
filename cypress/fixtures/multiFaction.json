@@ -1,0 +1,35 @@
+[{
+  "name": "Adeptus Mechanicus",
+  "codex": "https://www.games-workshop.com/resources/catalog/product/920x950/60030116005_INTAdeptusMechanicusCodexHB.jpg",
+  "quote": "The universe is not like a puzzle-box that you can take apart and put back together again and so solve its secrets. It is a shifting uncertain thing which changes as you consider it, which is changed by the very act of observation. A powerful man is not a man who dissects the universe like a puzzle-box, examining it piece by piece and measuring each piece with scientific precision. A powerful man has only to look upon the universe to change it.",
+  "description": "Shoot bigger guns",
+  "classification": "Imperium",
+  "createdAt": "2014-01-01T23:28:56.782Z",
+  "updatedAt": "2014-01-01T23:28:56.782Z"
+},{
+  "name": "Craftworlds",
+  "codex": "https://www.games-workshop.com/resources/catalog/product/920x950/60030104011_CodexCraftworldsENG01.jpg",
+  "quote": "Through the Webway!",
+  "description": "Pointy eared ponsy braggarts",
+  "classification": "Xenos",
+  "createdAt": "2014-01-01T23:28:56.782Z",
+  "updatedAt": "2014-01-01T23:28:56.782Z"
+},
+{
+  "name": "Necrons",
+  "codex": "https://www.games-workshop.com/resources/catalog/product/920x950/60030110006_ENGNecronCodex01.jpg",
+  "quote": "Life neverending",
+  "description": "Clanky space mummies",
+  "classification": "Xenos",
+  "createdAt": "2014-01-01T23:28:56.782Z",
+  "updatedAt": "2014-01-01T23:28:56.782Z"
+},
+{
+  "name": "Genestealer Cult",
+  "codex": "https://tienda.sharkgames.es/14261-large_default/-war-codex-genestealer-cults-sb-english.jpg",
+  "quote": "From the deep we rise to strike fear into the the hearts of man!",
+  "description": "Insurgent citizens who worship the Tyranids as deities from beyond the stars, the Genestealer Cults seek to destroy the Imperium from within.",
+  "classification": "Xenos",
+  "createdAt": "2014-01-01T23:28:56.782Z",
+  "updatedAt": "2014-01-01T23:28:56.782Z"
+}]

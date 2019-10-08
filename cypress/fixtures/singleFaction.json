@@ -1,4 +1,4 @@
-[ {
+  {
     "name": "Orks",
     "codex": "https://www.games-workshop.com/resources/catalog/product/920x950/60030103010_CodexOrksENG01.jpg",
     "quote": "WAAAAGGGHHHH!!!!!",
@@ -6,4 +6,4 @@
     "classification": "Xenos",
     "createdAt": "2014-01-01T23:28:56.782Z",
     "updatedAt": "2014-01-01T23:28:56.782Z"
-  }]
+  }
