@@ -42,7 +42,7 @@
     "popper.js": "^1.14.6",
     "rxjs": "~6.2.2",
     "rxjs-compat": "^6.2.2",
-    "sequelize": "^4.42.0",
+    "sequelize": "^5.15.1",
     "sequelize-cli": "^3.2.0",
     "tslib": "^1.9.0",
     "web-animations-js": "^2.3.1",
