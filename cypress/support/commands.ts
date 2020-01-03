@@ -23,12 +23,20 @@
 //
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+/// <reference types="cypress" />
 
 
-Cypress.Commands.add('seedAndVisit', (seedData = 'fixture:multiFaction') => {
+declare namespace Cypress {
+    interface Chainable<Subject> {
+        seedAndVisit: typeof seedAndVisit;
+    }
+}
+
+function seedAndVisit(seedData = 'fixture:multiFaction'): any {
     cy.server();
-    cy.route('GET', 'http://localhost:3000/factions', seedData)
-        .as('seed');
+    cy.route('GET', 'http://localhost:3000/factions', seedData).as('seed');
     cy.visit("/factions");
     cy.wait('@seed');
-});
+};
+
+Cypress.Commands.add('seedAndVisit', seedAndVisit);
